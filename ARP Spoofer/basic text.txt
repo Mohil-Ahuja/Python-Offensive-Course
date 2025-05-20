@@ -1,0 +1,9 @@
+arp -a : to check arp table 
+
+How this attack works?
+By telling the victim , that your device has the router's IP and then telling the router, that you have the victim's ip so now the traffic between victim and router flows through you.
+
+To enable the flow of device through your device, 
+enable port forwarding 
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
