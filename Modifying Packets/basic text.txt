@@ -15,4 +15,10 @@ Crafting a DNS Response: This method involves manually creating DNS responses, w
 
 Modifying a Forwarded DNS Response: The most advanced method, which includes capturing and altering DNS responses from a legitimate server before sending them back to the user.
 
+
+
 We will be doing the third one (its simpler, just change the ip)
+
+to flush the iptables use 
+iptables --flush 
+
