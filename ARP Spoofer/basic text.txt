@@ -6,4 +6,3 @@ By telling the victim , that your device has the router's IP and then telling th
 To enable the flow of device through your device, 
 enable port forwarding 
 echo 1 > /proc/sys/net/ipv4/ip_forward
-
