@@ -6,3 +6,13 @@ The below command will help to form a queue of the packets travelling through yo
 but the below command will help to form a queue of the packets locally.
 !iptables -I OUTPUT -j NFQUEUE --queue-num 0
 !iptables -I INPUT -j NFQUEUE --queue-num 0
+
+
+Ways to do DNS Spoofing:
+Installing a DNS Server: setting up a DNS server for returning any website for DNS requests.
+
+Crafting a DNS Response: This method involves manually creating DNS responses, which requires a deep understanding of DNS and is complex.
+
+Modifying a Forwarded DNS Response: The most advanced method, which includes capturing and altering DNS responses from a legitimate server before sending them back to the user.
+
+We will be doing the third one (its simpler, just change the ip)
