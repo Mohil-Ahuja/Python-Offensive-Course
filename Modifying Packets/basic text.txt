@@ -1,0 +1,8 @@
+use iptables to modify the route of the packets travelling through your device
+The below command will help to form a queue of the packets travelling through your computer by another ip 
+!iptables -I FORWARD -j NFQUEUE --queue-num 0
+
+
+but the below command will help to form a queue of the packets locally.
+!iptables -I OUTPUT -j NFQUEUE --queue-num 0
+!iptables -I INPUT -j NFQUEUE --queue-num 0
