@@ -1,3 +1,6 @@
+First use arp spoofer to become the man in the middle , then you can use other scripts like dns_spoof, replacing downloads etc.
+
+
 use iptables to modify the route of the packets travelling through your device
 The below command will help to form a queue of the packets travelling through your computer by another ip 
 !iptables -I FORWARD -j NFQUEUE --queue-num 0
@@ -21,4 +24,5 @@ We will be doing the third one (its simpler, just change the ip)
 
 to flush the iptables use 
 iptables --flush 
+
 
