@@ -26,3 +26,8 @@ to flush the iptables use
 iptables --flush 
 
 
+To use beef with code injector 
+
+replace the script to be injected 
+
+
