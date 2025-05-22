@@ -38,7 +38,8 @@ the man in the middle tool will downgrade the request coming
 from the server to http and then upgrade the http requests 
 coming from the target machine so the web server can respond properly.
 
-
+Using
+!bettercap -iface eth0 -caplet hstshijack/hstshijack
 -------------------------------------------------------------------------------
 
 HSTS websites are not possible to bypass, because whatever we do try 

