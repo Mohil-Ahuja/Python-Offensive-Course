@@ -1,6 +1,6 @@
 First use arp spoofer to become the man in the middle , then you can use other scripts like dns_spoof, replacing downloads etc.
 
-
+-----------------------------------------------------------------------
 use iptables to modify the route of the packets travelling through your device
 The below command will help to form a queue of the packets travelling through your computer by another ip 
 !iptables -I FORWARD -j NFQUEUE --queue-num 0
@@ -10,7 +10,7 @@ but the below command will help to form a queue of the packets locally.
 !iptables -I OUTPUT -j NFQUEUE --queue-num 0
 !iptables -I INPUT -j NFQUEUE --queue-num 0
 
-
+-----------------------------------------------------------
 Ways to do DNS Spoofing:
 Installing a DNS Server: setting up a DNS server for returning any website for DNS requests.
 
@@ -25,9 +25,22 @@ We will be doing the third one (its simpler, just change the ip)
 to flush the iptables use 
 iptables --flush 
 
-
+------------------------------------------------------
 To use beef with code injector 
 
 replace the script to be injected 
+------------------------------------------------------
+
+For HTTPS websites 
+
+we will do SSL Strip and downgrade it to http 
+the man in the middle tool will downgrade the request coming 
+from the server to http and then upgrade the http requests 
+coming from the target machine so the web server can respond properly.
 
 
+-------------------------------------------------------------------------------
+
+HSTS websites are not possible to bypass, because whatever we do try 
+those websites are hardcoded into the computer to only load 
+over https connection
