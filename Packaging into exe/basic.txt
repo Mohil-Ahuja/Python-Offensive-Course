@@ -1,3 +1,32 @@
 !pip install pyinstaller 
 
-pyinstaller.exe reverse.backdoor.py --onefile
+pyinstaller.exe reverse.backdoor.py --onefile --noconsole
+
+#--noconsole lets the program run silently on the target device
+
+
+all of the above commands work in terminal of windows to convert a file locally in your system 
+
+
+Now on Linux we can do the same thing by installing windows pyinstaller
+and then on terminal write the command 
+
+!wine msiexec /i python-2.7.14.msi 
+
+the above command saves the file in a hidden folder on linux in a virtual space called c drive 
+
+!wine python.exe -m pip install pyinstaller
+
+-----------------------------------------------------------------------------
+
+Now to package our keylogger, which has two files, zlogger and keylogger
+
+first we need to ensure that all the libraries are there in the same dir.
+
+so now on linux
+
+!wine /root/drive_c/python27/python.exe -m pip install pyinput
+
+we just need to package zlogger file, the packager will automatically know that the file depends on the keylogger file
+
+wine /root/.wine/drive_c/Python27/scripts/pyinstaller.exe zlogger.py --onefile --noconsole
