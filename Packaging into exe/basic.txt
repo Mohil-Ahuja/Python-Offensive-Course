@@ -1,0 +1,3 @@
+!pip install pyinstaller 
+
+pyinstaller.exe reverse.backdoor.py --onefile
