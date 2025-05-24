@@ -1,9 +1,0 @@
-Download UPX 3.94 latest version for linux
-
-go to the path where upx is installed 
-
-then type this in terminal
-
-./upx /root/..../reverse_backdoor/dist/reverse_backdoor.exe -o compressed_backdoor.exe
-
-

